@@ -65,13 +65,13 @@ Page {
     // Основной макет страницы
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 17
-        spacing: 10
+        anchors.margins: 15
+        spacing: 8
         
         // Верхняя панель с навигацией
         Item {
             Layout.fillWidth: true
-            height: 90
+            height: 60
             
             RowLayout {
                 anchors.fill: parent
@@ -204,11 +204,12 @@ Page {
         // Сетка календаря с днями
         GridLayout {
             id: calendarGrid
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+            Layout.fillWidth: false
+            Layout.fillHeight: false
             columns: 5
-            rowSpacing: 0
-            columnSpacing: 0
+            rowSpacing: 1
+            columnSpacing: 1
             
             // Шаблон для ячейки дня
             Component {
@@ -222,8 +223,8 @@ Page {
                     property bool hasMood: moodData !== null
                     
                     // Фиксированные размеры ячейки
-                    width: 70
-                    height: 100
+                    width: 68
+                    height: 88
                     radius: 10
                     color: isCurrentDay ? "#F7EAD9" : "#FDFDF5"
                     border.color: "#C7DAA1"
@@ -259,8 +260,8 @@ Page {
                             Image {
                                 anchors.centerIn: parent
                                 visible: hasMood
-                                width: 60
-                                height: 60
+                                width: 55
+                                height: 55
                                 source: {
                                     if (hasMood) {
                                         return "../images/dogs/dog_" + moodData.dogImageIndex + ".png";
@@ -337,7 +338,7 @@ Page {
                 }
             }
         }
-
+        
         // Отображение текущего года внизу
         Text {
             Layout.alignment: Qt.AlignHCenter

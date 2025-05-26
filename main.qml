@@ -9,7 +9,11 @@ ApplicationWindow {
     id: mainWindow
     visible: true
     width: 393
-    height: 852
+    height: 800
+    minimumWidth: 393
+    maximumWidth: 393
+    minimumHeight: 800
+    maximumHeight: 800
     title: "Mood Tracker"
     color: "#f5f5f5"
     

@@ -172,7 +172,7 @@ Page {
         // Подзаголовок для выбора собачки
         Text {
             Layout.fillWidth: true
-            text: "choose who are you today"
+            text: "woof are you today?"
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 18
             font.family: dayFont
